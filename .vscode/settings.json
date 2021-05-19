@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/8e74e2a3-316e-4093-9bd4-3469f94f145d/resourceGroups/GoRelax/providers/Microsoft.Web/sites/gorelax",
+    "appService.deploySubpath": "."
+}

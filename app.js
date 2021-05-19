@@ -2,7 +2,6 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -15,12 +14,13 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
-
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+const primaryConnectionKey = process.env.PRIMARY_CONNECTION_STRING;
+
+mongoose.connect(primaryConnectionKey, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -72,16 +72,13 @@ app.use((req, res, next) => {
     next();
 })
 
-
 app.use('/', userRoutes);
 app.use('/campgrounds', campgroundRoutes)
 app.use('/campgrounds/:id/reviews', reviewRoutes)
 
-
 app.get('/', (req, res) => {
     res.render('home')
 });
-
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
@@ -93,8 +90,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err })
 })
 
-app.listen(3000, () => {
-    console.log('Serving on port 3000')
+const port = process.env.PORT;
+app.listen(port, () => {
+    console.log(`listening on ${port}`);
 })
-
-
