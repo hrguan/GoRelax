@@ -6,7 +6,7 @@ const { cloudinary } = require("../cloudinary");
 
 
 module.exports.index = async (req, res) => {
-    const campgrounds = await Campground.find({});
+    const campgrounds = await Campground.find({}).populate('popupText');
     res.render('campgrounds/index', { campgrounds })
 }
 
@@ -25,7 +25,7 @@ module.exports.createCampground = async (req, res, next) => {
     campground.author = req.user._id;
     await campground.save();
     console.log(campground);
-    req.flash('success', 'Successfully made a place!');
+    req.flash('success', 'Successfully made a new place!');
     res.redirect(`/campgrounds/${campground._id}`)
 }
 
@@ -37,7 +37,7 @@ module.exports.showCampground = async (req, res,) => {
         }
     }).populate('author');
     if (!campground) {
-        req.flash('error', 'Cannot find that campground!');
+        req.flash('error', 'Cannot find that place!');
         return res.redirect('/campgrounds');
     }
     res.render('campgrounds/show', { campground });
@@ -47,7 +47,7 @@ module.exports.renderEditForm = async (req, res) => {
     const { id } = req.params;
     const campground = await Campground.findById(id)
     if (!campground) {
-        req.flash('error', 'Cannot find that campground!');
+        req.flash('error', 'Cannot find that place!');
         return res.redirect('/campgrounds');
     }
     res.render('campgrounds/edit', { campground });
@@ -66,13 +66,13 @@ module.exports.updateCampground = async (req, res) => {
         }
         await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
-    req.flash('success', 'Successfully update place!');
+    req.flash('success', 'Successfully updated place!');
     res.redirect(`/campgrounds/${campground._id}`)
 }
 
 module.exports.deleteCampground = async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
-    req.flash('success', 'Successfully deleted place')
+    req.flash('success', 'Successfully deleted palce')
     res.redirect('/campgrounds');
 }

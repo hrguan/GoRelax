@@ -1,4 +1,3 @@
-
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'cluster-map',
@@ -7,7 +6,7 @@ const map = new mapboxgl.Map({
     zoom: 3
 });
 
-map.addControl(new mapboxgl.NavigationControl(), );
+map.addControl(new mapboxgl.NavigationControl());
 
 
 
@@ -49,11 +48,11 @@ map.on('load', function () {
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
-                15,
-                10,
                 20,
-                30,
-                25
+                5,
+                25,
+                10,
+                30
             ]
         }
     });
@@ -130,3 +129,4 @@ map.on('load', function () {
         map.getCanvas().style.cursor = '';
     });
 });
+
