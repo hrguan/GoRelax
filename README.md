@@ -32,3 +32,4 @@ npm install
 ```
 7. Run MongoDB in one terminal
 8. Run node app.js in another terminal
+9. Go to localhost:3000
