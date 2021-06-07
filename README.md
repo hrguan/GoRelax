@@ -1,4 +1,4 @@
-###GoRelax 
+<h1>GoRelax 
 ------------------
 ![Home](https://res.cloudinary.com/dql5gkbx4/image/upload/v1623103018/homepage_cskksx.png)
 ![Places](https://res.cloudinary.com/dql5gkbx4/image/upload/v1623103010/allplaces_zzwinx.png)
