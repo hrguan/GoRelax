@@ -6,8 +6,7 @@
 GoRelax is a website where registered users can share relaxed places with others. Non-registered users are able to check all the places on this website. Registered users are able to create places and leave reviews! This project was part of Colt Steele's web development course on Udemy.
 
 ## Features
-* Users can create, edit, and remove campgrounds
-* Users can review campgrounds once, and edit or remove their review
-* User profiles include more information on the user (full name, email, phone, join date), their campgrounds, and the option to edit their profile or delete their account
-* Search campground by name or location
-* Sort campgrounds by highest rating, most reviewed, lowest price, or highest price
+* Registered users can create, edit, and remove places they create.
+* Registered users can leave, edit, and remove reviews for places.
+* Users can search places on the map.
+
