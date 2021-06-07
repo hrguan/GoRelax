@@ -12,3 +12,17 @@ GoRelax is a website where registered users can share relaxed places with others
 * Users can check the photos and reviews of places.
 
 ## Run Locally
+1. Create Cloudinary account
+2. Create MongoDB account
+3. Create Mapbox account
+4. Create a .env file 
+put the name, key, and secret of Cloudinary on the .env file
+put Mapbox token on the .env file
+put MongoDB connetion string on the .env file
+```
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_KEY=
+CLOUDINARY_SECRET=
+MAPBOX_TOKEN=
+PRIMARY_CONNECTION_STRING=
+```
