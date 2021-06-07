@@ -11,3 +11,4 @@ GoRelax is a website where registered users can share relaxed places with others
 * Users can search places on the map.
 * Users can check the photos and reviews of places.
 
+## Run Locally
