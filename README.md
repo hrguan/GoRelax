@@ -26,3 +26,9 @@ CLOUDINARY_SECRET=
 MAPBOX_TOKEN=
 PRIMARY_CONNECTION_STRING=
 ```
+5. Install dependencies
+```
+npm install
+```
+7. Run MongoDB in one terminal
+8. Run node app.js in another terminal
