@@ -15,10 +15,10 @@ GoRelax is a website where registered users can share relaxed places with others
 1. Create Cloudinary account
 2. Create MongoDB account
 3. Create Mapbox account
-4. Create a .env file 
-put the name, key, and secret of Cloudinary on the .env file
-put Mapbox token on the .env file
-put MongoDB connetion string on the .env file
+4. Create a .env file: 
+(1)put the name, key, and secret of Cloudinary on the .env file
+(2)put Mapbox token on the .env file
+(3)put MongoDB connetion string on the .env file
 ```
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_KEY=
